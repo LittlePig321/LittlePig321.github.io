@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://LittlePig321.github.io</id>
     <title>little pig</title>
-    <updated>2019-04-30T08:20:56.714Z</updated>
+    <updated>2019-04-30T10:26:17.750Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://LittlePig321.github.io"/>
     <link rel="self" href="https://LittlePig321.github.io/atom.xml"/>
@@ -10,6 +10,17 @@
     <logo>https://LittlePig321.github.io/images/avatar.png</logo>
     <icon>https://LittlePig321.github.io/favicon.ico</icon>
     <rights>All rights reserved 2019, little pig</rights>
+    <entry>
+        <title type="html"><![CDATA[Why do some people like to control others?]]></title>
+        <id>https://LittlePig321.github.io/post/why-do-some-people-like-to-control-others</id>
+        <link href="https://LittlePig321.github.io/post/why-do-some-people-like-to-control-others">
+        </link>
+        <updated>2019-04-30T10:23:27.000Z</updated>
+        <summary type="html"><![CDATA[<p>I have heard people tell a story like this: When a girl was taking a doctoral degree, she always worried that she couldn’t get it, and she was worried that her favorite tutor would not want her. At that time, her ex-boyfriend tried to comfort her: &quot;Dear You can't take a doctor, you are still a master, don't worry.&quot; She felt that her ex-boyfriend had no ability to comfort her. Because she was still very anxious. Later, let the ex-boyfriend calm her anxiety. The demand is growing, and the boyfriend's &quot;incompetence&quot; is getting more and more dissatisfied with her. Finally, she chose to break up with her boyfriend.</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>I have heard people tell a story like this: When a girl was taking a doctoral degree, she always worried that she couldn’t get it, and she was worried that her favorite tutor would not want her. At that time, her ex-boyfriend tried to comfort her: &quot;Dear You can't take a doctor, you are still a master, don't worry.&quot; She felt that her ex-boyfriend had no ability to comfort her. Because she was still very anxious. Later, let the ex-boyfriend calm her anxiety. The demand is growing, and the boyfriend's &quot;incompetence&quot; is getting more and more dissatisfied with her. Finally, she chose to break up with her boyfriend.</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Cereals Brain]]></title>
         <id>https://LittlePig321.github.io/post/cereals-brain</id>
