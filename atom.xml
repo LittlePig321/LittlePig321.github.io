@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://LittlePig321.github.io</id>
     <title>little pig</title>
-    <updated>2019-05-05T03:29:16.610Z</updated>
+    <updated>2019-05-05T04:38:47.595Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://LittlePig321.github.io"/>
     <link rel="self" href="https://LittlePig321.github.io/atom.xml"/>
@@ -10,6 +10,21 @@
     <logo>https://LittlePig321.github.io/images/avatar.png</logo>
     <icon>https://LittlePig321.github.io/favicon.ico</icon>
     <rights>All rights reserved 2019, little pig</rights>
+    <entry>
+        <title type="html"><![CDATA[Perseverance]]></title>
+        <id>https://LittlePig321.github.io/post/perseverance</id>
+        <link href="https://LittlePig321.github.io/post/perseverance">
+        </link>
+        <updated>2019-05-05T03:38:12.000Z</updated>
+        <summary type="html"><![CDATA[<p>Too many children are declared to be &quot;winner.&quot; They have habitually felt that they are unique, and others have said how talented they are,  In this way, it becomes difficult for them to recognize and praise real excellence in some backgrounds.</p>
+<p>When you are always open-minded and have a lot of things involved, you put too much energy into them, so there is no more energy to concentrate on any one thing.</p>
+<p>We are not happy because we succeed in a certain area, and we succeed because we are already happy.</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>Too many children are declared to be &quot;winner.&quot; They have habitually felt that they are unique, and others have said how talented they are,  In this way, it becomes difficult for them to recognize and praise real excellence in some backgrounds.</p>
+<p>When you are always open-minded and have a lot of things involved, you put too much energy into them, so there is no more energy to concentrate on any one thing.</p>
+<p>We are not happy because we succeed in a certain area, and we succeed because we are already happy.</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Why do some people like to control others?]]></title>
         <id>https://LittlePig321.github.io/post/why-do-some-people-like-to-control-others</id>
