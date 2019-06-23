@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://LittlePig321.github.io</id>
     <title>little pig</title>
-    <updated>2019-05-30T01:41:10.154Z</updated>
+    <updated>2019-06-23T03:25:00.147Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://LittlePig321.github.io"/>
     <link rel="self" href="https://LittlePig321.github.io/atom.xml"/>
@@ -31,9 +31,11 @@
         <link href="https://LittlePig321.github.io/post/anki-with-code">
         </link>
         <updated>2019-05-15T01:35:48.000Z</updated>
-        <summary type="html"><![CDATA[<p>I happened to see an article introducing Anki last week. I suddenly had curious. So, I just want to make good use of this tool. First, download the software, then familiarize with the most basic functions of the software. I feel very good. Later I was thinking, I want to combine &quot;Aurora Word&quot;, &quot;Hundred Words&quot;, &quot;Anki&quot;, so I have the following video.</p>
+        <summary type="html"><![CDATA[<p><a href="http://ankichina.net/Home/Index/index"><img src="https://img.shields.io/badge/Movie-Anki-brightgreen.svg" alt="github"></a></p>
+<p>I happened to see an article introducing Anki last week. I suddenly had curious. So, I just want to make good use of this tool. First, download the software, then familiarize with the most basic functions of the software. I feel very good. Later I was thinking, I want to combine &quot;Aurora Word&quot;, &quot;Hundred Words&quot;, &quot;Anki&quot;, so I have the following video.</p>
 ]]></summary>
-        <content type="html"><![CDATA[<p>I happened to see an article introducing Anki last week. I suddenly had curious. So, I just want to make good use of this tool. First, download the software, then familiarize with the most basic functions of the software. I feel very good. Later I was thinking, I want to combine &quot;Aurora Word&quot;, &quot;Hundred Words&quot;, &quot;Anki&quot;, so I have the following video.</p>
+        <content type="html"><![CDATA[<p><a href="http://ankichina.net/Home/Index/index"><img src="https://img.shields.io/badge/Movie-Anki-brightgreen.svg" alt="github"></a></p>
+<p>I happened to see an article introducing Anki last week. I suddenly had curious. So, I just want to make good use of this tool. First, download the software, then familiarize with the most basic functions of the software. I feel very good. Later I was thinking, I want to combine &quot;Aurora Word&quot;, &quot;Hundred Words&quot;, &quot;Anki&quot;, so I have the following video.</p>
 ]]></content>
     </entry>
     <entry>
