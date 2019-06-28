@@ -1,0 +1,154 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>(译)Understanding promises in JavaScript | little pig</title>
+<link rel="shortcut icon" href="https://LittlePig321.github.io/favicon.ico?v=1561710865620">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://LittlePig321.github.io/styles/main.css">
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
+
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="post-detail">
+          <a href="https://LittlePig321.github.io" class="backHome">
+            <i class="material-icons md-48 backIcon">keyboard_arrow_left</i>&nbsp;<span style="vertical-align: middle">BACK HOME</span>
+          </a>
+
+          <article class="post">
+            <h2 class="post-title">
+              (译)Understanding promises in JavaScript
+            </h2>
+            <div class="post-infos">
+              <time>Published 2019-06-28</time>
+              
+            </div>
+            
+              <div class="post-feature-image" style="background-image: url('https://LittlePig321.github.io/post-images/understanding-promises-in-javascript.jpeg')">
+              </div>
+            
+            <div class="post-content">
+              <p>我对 JavaScript 有种又爱又恨的感觉. 但是尽管日此, JavaScript对为而言一直是新奇的. 从事java 和 PHP 已经十年了, JavaScript 看起来似乎很不一样, 而且令人感觉新奇. 我并没有花费过大量时间在 JavaScript 上, 最近一直在努力弥补.</p>
+<p><code>Promise</code> 是我遇到的第一个有趣的话题. 我常常听到人们说 <code>Promise</code> 拯救了 <code>回调地狱</code>,虽然它可能是令人愉快的副作用, 但 Promise 还有更多. 以下是我到目前为止能够弄明白的. 这将是一篇很长的文章.</p>
+<h2 id="背景">背景</h2>
+<p>当你第一次使用 JavaScript 开始工作, 你可能会有点沮丧. 你会听到一些人说 JavaScript 是同步编程语言, 而另一些人则声称它是异步的. 你会听到 阻塞编程, 非阻塞编程, 事件驱动设计模式, 事件生命周期, 函数栈, 事件队列, 事件冒泡, polyfill, babel, angular, reactJS, vueJS, 和大量其他工具和库. 不要担心. 你不是第一个. 有个术语, 叫做 <code>JavaScript 疲劳</code>.</p>
+<blockquote>
+<p>&quot;JavaScript fatigue is what happens when people use tools they don't need to solve problems they don't have.&quot; - Lucas F</p>
+</blockquote>
+<blockquote>
+<p>JavaScript 是同步编程语言, 但是由于回调函数，我们可以使它像异步编程语言一样工作.</p>
+</blockquote>
+<h2 id="对于外行人的-promise">对于外行人的 Promise</h2>
+<p>JavaScript 中的 Promise 特别类似于你在现实生活中的<code>承诺</code>.所以首先让我们看看现实生活中的承诺.</p>
+<p>字典中是这么定义承诺的:</p>
+<blockquote>
+<p>promise: 名词; 保证某个人要做某事, 或者某件特定的事情将会发生.</p>
+</blockquote>
+<p>所以, 当给你一个承诺的时候, 会发生什么?</p>
+<ol>
+<li>承诺给你一个某些事情将要被做的保证. 无论他们是自己做这件事还是让别人来做这件事是无关紧要的. 他们给你的保证, 你可以据此计划一些事.</li>
+<li>承诺可以被遵守也可以被打破.</li>
+<li>当一个承诺被遵守时, 你希望从承诺中获得些东西. 你可以利用承诺的结果来进一步行动或计划.</li>
+<li>当一个承诺被打破时, 你可能想知道为什么这个做出承诺的人无法履行他的承诺. 一旦你知道原因并且确认这个承诺被打破, 你可以计划下一步做什么或者如何处理它.</li>
+<li>在做出承诺的时候, 我们有的仅仅是一个保证. 我们不可能立刻执行它. 我们可以决定和制订当承诺被<code>遵守</code>(因此我们有预期的结果)或<code>违背</code>(我们知道原因，因此我们可以计划一个意外)时,需要做什么.</li>
+<li>有可能你没有收到承诺人的回复.对于这种情况, 你可能更喜欢设定一个时间限制.比如说, 承诺人没有在十天之内给我回复, 我将认为他有一些问题并且无法再遵守他的承诺. 所以即使承诺人 15 天后回复我, 这一句对我来说无关紧要了, 因为你已经有了其他计划了.</li>
+</ol>
+<h2 id="javascript-中的-promise">JavaScript 中的 Promise</h2>
+<p>一般说来, 我经常阅读来自 MDN Web Docs 的文档. 在所有的资源中, 我认为他们提供了最简洁的细节. 我研读 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">MDN Web Docs 关于 Promise 的文章</a>, 并且玩里面的代码来或得窍门.</p>
+<p>这有两部分来理解 Promise, <code>创建 Promise</code> 和<code>处理 Promise</code>. 虽然我们的大多数代码通常可以处理其他库创建的 Promise.但是完全理解这些承诺肯定会对我们有所帮助. 一旦你跨过了初级阶段, 理解承诺的创建也同样重要.</p>
+<h3 id="promise-的创建creation-of-promise">Promise 的创建(Creation of  Promise)</h3>
+<p>让我们看看创新新 Promise 的语法:</p>
+<pre><code>new Promise( /* executor */  function(resolve, reject) { ... }  );
+</code></pre>
+<p>构造函数接受一个名为<code>executor</code>的函数.这个 executor 函数接收两个参数 <code>resolve</code> 和 <code>reject</code> . 这两个参数又是函数.</p>
+<p>Promise 通常用于简单的处理异步操作或者阻塞编程.例如文件操作, 应用编程接口(API)调用, 数据库调用, 输入输出(IO)调用等. 这些异步操作的启动发生在 executor 函数内. 如果这些异步操作成功, 那么通过由 <strong>Promise 的 creator 来调用 resolve 函数</strong>返回预期的结果. 相似的, 如果有有一些意外的错误, 则通过调用 reject 函数来传递原因.</p>
+<p>现在我们知道如何创建 Promise, 为了我们理解, 让我们创建一个简单的 Promise:</p>
+<pre><code>var keepsHisWord;
+keepsHisWord = true;
+promise1 = new Promise(function (resolve, reject) {
+	if (keepsHisWord) {
+		resolve(&quot;The man likes to keep his word&quot;)
+	} else {
+		reject(&quot;The man dosent want to keep his word&quot;)
+	}
+})
+
+console.log(promise1)
+</code></pre>
+<p><img src="https://LittlePig321.github.io/post-images/1561707646147.png" alt="每一个 Promise 都有一个状态和值"></p>
+<p>由于 Promise 立刻得到 resolved, 我们将不可能检查 Promise 初始化的状态. 所以让我们仅仅创建一个新的 Promise, 让它需要一些时间 resolve. 最简单的方法就是使用 setTimeOut 函数.</p>
+<pre><code>let promise2 = new Promise(function (resolve, reject) {
+	setTimeout(function () {
+		resolve({
+			message: &quot;The man likes to keep his word&quot;,
+			code: &quot;aManKeepsHisWord&quot;
+		});
+	}, 10* 1000)
+});
+
+console.log(promise2);
+</code></pre>
+<p><img src="https://LittlePig321.github.io/post-images/1561708569051.png" alt="Promise的state，直到它被resolve或reject"></p>
+<p>一旦 10 秒钟过后, Promise 被 resolve. <code>PromiseStatus</code> 和 <code>PromiseValue</code> 都被相应的更新. 可以看到我们改动了 resolve 函数, 以便于我们可以传递 <code>JSON 对象</code>而不是简单的字符串.这仅仅是为了展示我们可以在 resolve 函数中传递其他值.</p>
+<p><img src="https://LittlePig321.github.io/post-images/1561708789643.png" alt="Promise 在 10 秒后 resolve,并返回一个 JSON 对象"></p>
+<p>现在让我们看看 Promise 被 reject 的情况. 让我们对代码进行一些修改.</p>
+<pre><code>keepsHisWord = false;
+promise3 = new Promise(function(resolve, reject) {
+  if (keepsHisWord) {
+    resolve(&quot;The man likes to keep his word&quot;);
+  } else {
+    reject(&quot;The man doesn't want to keep his word&quot;);
+  }
+});
+console.log(promise3);
+</code></pre>
+<p>因为这将创建一个无法处理的 rejection. Chrome 浏览器会报错, 你现在可以忽略, 我们将会在后面谈这个.</p>
+<p><img src="https://LittlePig321.github.io/post-images/1561708993085.png" alt="rejections in promises"></p>
+<p>正如我们看到的 PromiseStatus 有三种不同的值. pending, resolved, rejected. 当 Promise 被创建时, PromiseStatus 将处于 pending 状态, 并且Promise 被 resolved 或者 rejected之前, PromiseValue 是 undefined. 当 Promise 是 resolved 或者 rejected 状态时, 一个 Promise 被称为解决了. 所以 Promise 通常会从 pending 状态转向 settled 状态.</p>
+<p>现在我们知道 Promise 如何被创建的. 我们就可以看看我们如何使用或者处理 Promise. 这对于理解 Promise 对象紧密关联.</p>
+<h2 id="理解-promise-对象">理解 Promise 对象</h2>
+<p>根据 MDN 文档:</p>
+<blockquote>
+<p>Promise 对象代表了异步操作最终的完成(或失败), 及其返回值</p>
+</blockquote>
+<p>Promise 对象有静态方法和原型方法. Promise 对象中的静态方法可以独立的被应用. 而原型方法要被应用在Promise 对象的实例上. 记住普通方法和原型都会返回一个 Promise. 这使得理解事情变得容易多了.</p>
+<h2 id="原型方法">原型方法</h2>
+<p>让我们开始学习原型方法,它们有三个. 只是重申一下, 记住所有这些方法都可以应用到Promise 对象实例上, 并且所有这些方法依次返回一个 Promise. 下面的所有方法为 Promise 的不同状态转换指定处理程序.</p>
+
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://LittlePig321.github.io/post/es6-cool-stuffs-a-big-fat-arrow">
+              <h3 class="post-title">
+                (译)ES6 Cool stuffs — A big fat Arrow
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/LittlePig321" target="_blank">LittlePig</a>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+</script>
+
+      </div>
+    </div>
+  </body>
+</html>
