@@ -4,7 +4,7 @@
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>(译)Understanding promises in JavaScript | little pig</title>
-<link rel="shortcut icon" href="https://LittlePig321.github.io/favicon.ico?v=1561710865620">
+<link rel="shortcut icon" href="https://LittlePig321.github.io/favicon.ico?v=1565748813173">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://LittlePig321.github.io/styles/main.css">
 
@@ -121,7 +121,14 @@ console.log(promise3);
 </blockquote>
 <p>Promise 对象有静态方法和原型方法. Promise 对象中的静态方法可以独立的被应用. 而原型方法要被应用在Promise 对象的实例上. 记住普通方法和原型都会返回一个 Promise. 这使得理解事情变得容易多了.</p>
 <h2 id="原型方法">原型方法</h2>
-<p>让我们开始学习原型方法,它们有三个. 只是重申一下, 记住所有这些方法都可以应用到Promise 对象实例上, 并且所有这些方法依次返回一个 Promise. 下面的所有方法为 Promise 的不同状态转换指定处理程序.</p>
+<p>让我们开始学习原型方法,它们有三个. 只是重申一下, 记住所有这些方法都可以应用到Promise 对象实例上, 并且所有这些方法依次返回一个 Promise. 下面的所有方法为 Promise 的不同状态转换指定处理程序. 正如我们之前看到的，当一个Promise被创建时，它处于pending状态. 基于 Promise 是否被 fulfilled 或 rejectde 而确定 Promise 时,将允许下列三个方法中一个或多个.</p>
+<pre><code>Promise.prototype.catch(onRejected)
+
+Promise.prototype.then(onFulfilled, onRejected)
+
+Promise.prototype.finally(onFinally)
+</code></pre>
+<p>下图展示了 .then 和 .catch 方法的流程. 因为他们返回一个 Promise, 他们可以在此被链接, 这也显示在图片中. 如果 .finally 是被声明</p>
 
             </div>
           </article>
