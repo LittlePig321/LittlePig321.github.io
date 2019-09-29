@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://LittlePig321.github.io</id>
     <title>little pig</title>
-    <updated>2019-08-22T02:08:22.504Z</updated>
+    <updated>2019-09-29T09:45:49.398Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://LittlePig321.github.io"/>
     <link rel="self" href="https://LittlePig321.github.io/atom.xml"/>
@@ -10,6 +10,13 @@
     <logo>https://LittlePig321.github.io/images/avatar.png</logo>
     <icon>https://LittlePig321.github.io/favicon.ico</icon>
     <rights>All rights reserved 2019, little pig</rights>
+    <entry>
+        <title type="html"><![CDATA[中美贸易战]]></title>
+        <id>https://LittlePig321.github.io/post/zhong-mei-mao-yi-zhan</id>
+        <link href="https://LittlePig321.github.io/post/zhong-mei-mao-yi-zhan">
+        </link>
+        <updated>2019-09-29T06:50:08.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[如何让父母远离危害性的网络谣言]]></title>
         <id>https://LittlePig321.github.io/post/ru-he-rang-fu-mu-yuan-chi-wei-hai-xing-de-wang-luo-yao-yan</id>
@@ -59,10 +66,10 @@
         <link href="https://LittlePig321.github.io/post/anki-with-code">
         </link>
         <updated>2019-05-15T01:35:48.000Z</updated>
-        <summary type="html"><![CDATA[<p><a href="http://ankichina.net/Home/Index/index"><img src="https://img.shields.io/badge/Movie-Anki-brightgreen.svg" alt="github"></a></p>
+        <summary type="html"><![CDATA[<figure data-type="image" tabindex="1"><a href="http://ankichina.net/Home/Index/index"><img src="https://img.shields.io/badge/Movie-Anki-brightgreen.svg" alt="github"></a></figure>
 <p>I happened to see an article introducing Anki last week. I suddenly had curious. So, I just want to make good use of this tool. First, download the software, then familiarize with the most basic functions of the software. I feel very good. Later I was thinking, I want to combine &quot;Aurora Word&quot;, &quot;Hundred Words&quot;, &quot;Anki&quot;, so I have the following video.</p>
 ]]></summary>
-        <content type="html"><![CDATA[<p><a href="http://ankichina.net/Home/Index/index"><img src="https://img.shields.io/badge/Movie-Anki-brightgreen.svg" alt="github"></a></p>
+        <content type="html"><![CDATA[<figure data-type="image" tabindex="1"><a href="http://ankichina.net/Home/Index/index"><img src="https://img.shields.io/badge/Movie-Anki-brightgreen.svg" alt="github"></a></figure>
 <p>I happened to see an article introducing Anki last week. I suddenly had curious. So, I just want to make good use of this tool. First, download the software, then familiarize with the most basic functions of the software. I feel very good. Later I was thinking, I want to combine &quot;Aurora Word&quot;, &quot;Hundred Words&quot;, &quot;Anki&quot;, so I have the following video.</p>
 ]]></content>
     </entry>
@@ -117,17 +124,6 @@
         <summary type="html"><![CDATA[<p>In order to stay away from the disease, we follow the so-called  <code>healthy diet</code> to consume a lot of gluten and carbohydrates. However, brain and body diseases such as Alzheimer's disease, epilepsy, and anxiety are still raging. Why does this happen?</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>In order to stay away from the disease, we follow the so-called  <code>healthy diet</code> to consume a lot of gluten and carbohydrates. However, brain and body diseases such as Alzheimer's disease, epilepsy, and anxiety are still raging. Why does this happen?</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Someone has exposed BILIBILI backend code on Github]]></title>
-        <id>https://LittlePig321.github.io/post/someone-has-exposed-bilibili-backend-code-on-github</id>
-        <link href="https://LittlePig321.github.io/post/someone-has-exposed-bilibili-backend-code-on-github">
-        </link>
-        <updated>2019-04-24T14:58:35.000Z</updated>
-        <summary type="html"><![CDATA[<p>Someone has exposed BILIBILI backend code on Github.  I know this thing after one day. When I hear about this, I'm shocked. When people do something like this, either this is a problem with the people's character, or this is a problem with the company. In either case, the ultimate winner of this event is Github. Like 996.icu.</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>Someone has exposed BILIBILI backend code on Github.  I know this thing after one day. When I hear about this, I'm shocked. When people do something like this, either this is a problem with the people's character, or this is a problem with the company. In either case, the ultimate winner of this event is Github. Like 996.icu.</p>
 ]]></content>
     </entry>
 </feed>

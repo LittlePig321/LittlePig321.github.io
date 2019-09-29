@@ -4,7 +4,7 @@
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>(译)Understanding promises in JavaScript | little pig</title>
-<link rel="shortcut icon" href="https://LittlePig321.github.io/favicon.ico?v=1566439677008">
+<link rel="shortcut icon" href="https://LittlePig321.github.io/favicon.ico?v=1569750347032">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://LittlePig321.github.io/styles/main.css">
 
@@ -83,7 +83,7 @@ promise1 = new Promise(function (resolve, reject) {
 
 console.log(promise1)
 </code></pre>
-<p><img src="https://LittlePig321.github.io/post-images/1561707646147.png" alt="每一个 Promise 都有一个状态和值"></p>
+<figure data-type="image" tabindex="1"><img src="https://LittlePig321.github.io/post-images/1561707646147.png" alt="每一个 Promise 都有一个状态和值"></figure>
 <p>由于 Promise 立刻得到 resolved, 我们将不可能检查 Promise 初始化的状态. 所以让我们仅仅创建一个新的 Promise, 让它需要一些时间 resolve. 最简单的方法就是使用 setTimeOut 函数.</p>
 <pre><code>let promise2 = new Promise(function (resolve, reject) {
 	setTimeout(function () {
@@ -96,9 +96,9 @@ console.log(promise1)
 
 console.log(promise2);
 </code></pre>
-<p><img src="https://LittlePig321.github.io/post-images/1561708569051.png" alt="Promise的state，直到它被resolve或reject"></p>
+<figure data-type="image" tabindex="2"><img src="https://LittlePig321.github.io/post-images/1561708569051.png" alt="Promise的state，直到它被resolve或reject"></figure>
 <p>一旦 10 秒钟过后, Promise 被 resolve. <code>PromiseStatus</code> 和 <code>PromiseValue</code> 都被相应的更新. 可以看到我们改动了 resolve 函数, 以便于我们可以传递 <code>JSON 对象</code>而不是简单的字符串.这仅仅是为了展示我们可以在 resolve 函数中传递其他值.</p>
-<p><img src="https://LittlePig321.github.io/post-images/1561708789643.png" alt="Promise 在 10 秒后 resolve,并返回一个 JSON 对象"></p>
+<figure data-type="image" tabindex="3"><img src="https://LittlePig321.github.io/post-images/1561708789643.png" alt="Promise 在 10 秒后 resolve,并返回一个 JSON 对象"></figure>
 <p>现在让我们看看 Promise 被 reject 的情况. 让我们对代码进行一些修改.</p>
 <pre><code>keepsHisWord = false;
 promise3 = new Promise(function(resolve, reject) {
@@ -111,7 +111,7 @@ promise3 = new Promise(function(resolve, reject) {
 console.log(promise3);
 </code></pre>
 <p>因为这将创建一个无法处理的 rejection. Chrome 浏览器会报错, 你现在可以忽略, 我们将会在后面谈这个.</p>
-<p><img src="https://LittlePig321.github.io/post-images/1561708993085.png" alt="rejections in promises"></p>
+<figure data-type="image" tabindex="4"><img src="https://LittlePig321.github.io/post-images/1561708993085.png" alt="rejections in promises"></figure>
 <p>正如我们看到的 PromiseStatus 有三种不同的值. pending, resolved, rejected. 当 Promise 被创建时, PromiseStatus 将处于 pending 状态, 并且Promise 被 resolved 或者 rejected之前, PromiseValue 是 undefined. 当 Promise 是 resolved 或者 rejected 状态时, 一个 Promise 被称为解决了. 所以 Promise 通常会从 pending 状态转向 settled 状态.</p>
 <p>现在我们知道 Promise 如何被创建的. 我们就可以看看我们如何使用或者处理 Promise. 这对于理解 Promise 对象紧密关联.</p>
 <h2 id="理解-promise-对象">理解 Promise 对象</h2>
