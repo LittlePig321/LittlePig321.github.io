@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://LittlePig321.github.io</id>
     <title>little pig</title>
-    <updated>2019-10-15T03:56:36.716Z</updated>
+    <updated>2019-10-25T06:36:00.618Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://LittlePig321.github.io"/>
     <link rel="self" href="https://LittlePig321.github.io/atom.xml"/>
@@ -30,20 +30,6 @@
         <link href="https://LittlePig321.github.io/post/xiang-gang-tai-wan-xiang-guan-de-shi-pin">
         </link>
         <updated>2019-08-14T01:07:16.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[(译)Understanding promises in JavaScript]]></title>
-        <id>https://LittlePig321.github.io/post/understanding-promises-in-javascript</id>
-        <link href="https://LittlePig321.github.io/post/understanding-promises-in-javascript">
-        </link>
-        <updated>2019-06-28T06:13:29.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[(译)ES6 Cool stuffs — A big fat Arrow]]></title>
-        <id>https://LittlePig321.github.io/post/es6-cool-stuffs-a-big-fat-arrow</id>
-        <link href="https://LittlePig321.github.io/post/es6-cool-stuffs-a-big-fat-arrow">
-        </link>
-        <updated>2019-06-28T05:30:56.000Z</updated>
     </entry>
     <entry>
         <title type="html"><![CDATA[what is the cost of lies?]]></title>
@@ -124,6 +110,17 @@
         <summary type="html"><![CDATA[<p>In order to stay away from the disease, we follow the so-called  <code>healthy diet</code> to consume a lot of gluten and carbohydrates. However, brain and body diseases such as Alzheimer's disease, epilepsy, and anxiety are still raging. Why does this happen?</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>In order to stay away from the disease, we follow the so-called  <code>healthy diet</code> to consume a lot of gluten and carbohydrates. However, brain and body diseases such as Alzheimer's disease, epilepsy, and anxiety are still raging. Why does this happen?</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Someone has exposed BILIBILI backend code on Github]]></title>
+        <id>https://LittlePig321.github.io/post/someone-has-exposed-bilibili-backend-code-on-github</id>
+        <link href="https://LittlePig321.github.io/post/someone-has-exposed-bilibili-backend-code-on-github">
+        </link>
+        <updated>2019-04-24T14:58:35.000Z</updated>
+        <summary type="html"><![CDATA[<p>Someone has exposed BILIBILI backend code on Github.  I know this thing after one day. When I hear about this, I'm shocked. When people do something like this, either this is a problem with the people's character, or this is a problem with the company. In either case, the ultimate winner of this event is Github. Like 996.icu.</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>Someone has exposed BILIBILI backend code on Github.  I know this thing after one day. When I hear about this, I'm shocked. When people do something like this, either this is a problem with the people's character, or this is a problem with the company. In either case, the ultimate winner of this event is Github. Like 996.icu.</p>
 ]]></content>
     </entry>
 </feed>
