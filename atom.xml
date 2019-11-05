@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://LittlePig321.github.io</id>
     <title>little pig</title>
-    <updated>2019-10-25T06:36:00.618Z</updated>
+    <updated>2019-11-05T10:42:20.137Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://LittlePig321.github.io"/>
     <link rel="self" href="https://LittlePig321.github.io/atom.xml"/>
@@ -10,6 +10,19 @@
     <logo>https://LittlePig321.github.io/images/avatar.png</logo>
     <icon>https://LittlePig321.github.io/favicon.ico</icon>
     <rights>All rights reserved 2019, little pig</rights>
+    <entry>
+        <title type="html"><![CDATA[MovieAnkiListen]]></title>
+        <id>https://LittlePig321.github.io/post/movieankilisten</id>
+        <link href="https://LittlePig321.github.io/post/movieankilisten">
+        </link>
+        <updated>2019-11-05T10:17:59.000Z</updated>
+        <summary type="html"><![CDATA[<p>做这个工具的起因是因为想练习英语听力. 借助开源软件 anki, 做了一个批量生成apkg包的工具.<br>
+<img src="https://LittlePig321.github.io/post-images/1572949910331.png" alt="最终在 anki 中的展示"></p>
+]]></summary>
+        <content type="html"><![CDATA[<p>做这个工具的起因是因为想练习英语听力. 借助开源软件 anki, 做了一个批量生成apkg包的工具.<br>
+<img src="https://LittlePig321.github.io/post-images/1572949910331.png" alt="最终在 anki 中的展示"></p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[中美贸易战]]></title>
         <id>https://LittlePig321.github.io/post/zhong-mei-mao-yi-zhan</id>
