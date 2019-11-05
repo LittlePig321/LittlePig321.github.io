@@ -4,7 +4,7 @@
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>MovieAnkiListen | little pig</title>
-<link rel="shortcut icon" href="https://LittlePig321.github.io/favicon.ico?v=1572950738262">
+<link rel="shortcut icon" href="https://LittlePig321.github.io/favicon.ico?v=1572951949901">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://LittlePig321.github.io/styles/main.css">
 
@@ -52,7 +52,33 @@
 <p>生成的 apkg 就是 anki 需要的. 直接导入到 anki 中就可以了.</p>
 <figure data-type="image" tabindex="4"><img src="https://LittlePig321.github.io/post-images/1572950496110.jpg" alt=""></figure>
 <p>到这里是整个批量生成 apkg 的操作流程.</p>
-<h2 id=""></h2>
+<h2 id="技术栈">技术栈</h2>
+<ul>
+<li>web前端: Vue + Vuetify</li>
+<li>web后端: Koa</li>
+<li>桌面端: electron-Vue + Vuetify</li>
+</ul>
+<h2 id="技术难题">技术难题</h2>
+<h3 id="如何覆盖-90-以上的词汇翻译和读音">如何覆盖 90% 以上的词汇翻译和读音</h3>
+<p>这个难点在于找到一个非常非常全面的词库, 幸运的是, 在 GitHub 上找到了 EDICT 项目, 源于作者的无私奉献, 才有我这个工具, 所以在这里非常感谢.</p>
+<h3 id="自动生成模板并批量生成apkg">自动生成模板并批量生成apkg</h3>
+<p>生成 apkg 并不是一件容易的事情, 因为没有现成的代码🤣. 通过对已有apkg所带的sqlite数据库进行逆向字段分析, 并进行一次又一次实验, 才实现了模板自动生成. 当同样的apkg包导入 anki 后, 却出现了不同的模板. 经过一段时间摸索, 才发现数据库 id 不同造成的.<code>探索apkg包自动生成的过程费了不少时间, 但最终也是克服了.</code></p>
+<h2 id="如何让用户点击的每个单词都有视频">如何让用户点击的每个单词都有视频</h2>
+<p>这个想法是源于 <code>极光单词</code>, 极光单词里每个单词几乎都有一个视频, 但是单词视频的比例不是很高, 而我想做的, <code>就是如何让每个单词 100% 有视频</code>.</p>
+<ul>
+<li>爬取极光单词</li>
+<li>爬取百词斩单词</li>
+<li>爬取 YouTube</li>
+</ul>
+<p>前面两个好实现, 写个爬虫, 就可以了. 但是<code>极光单词</code>和<code>百词斩</code>的视频覆盖率太低了. 所以才有了第三个想法: <code>YouTube 单词视频自动化生成</code></p>
+<p>一开始的想法是爬取 youglish 这个网站上的 YouTube 视频, 分段下载, 然后拼接. 但是面临 Google 的验证(这个没法破解, Google 又不是吃干饭的). 所以只能自己去爬取 YouTube 的视频.</p>
+<h3 id="如何在-youtube-中找到包含关键字的字幕所在视频">如何在 YouTube 中找到包含关键字的字幕所在视频</h3>
+<p>刚开始以为只要在 youtube 搜索栏里搜索出来的视频里应该有. 经过测试, 我还是 too young too  simple 啊, 情况并不是如此. 这就是词汇视频制作的关键难点了.</p>
+<p>面临的问题还是挺多的, 一个是VPN, 一个是 api 的访问次数限制. 这两个问题就让人头疼. 为此我想到的解决办法, 就是制作 YouTube 词汇库.弄个自己的视频资源库（演讲，美剧等），然后提取字幕，分析字幕里带有某个单词的语句，再根据字幕定位到视频中的时间节点，进行截取. 这里主要用到的跟视频相关的工具是<code>youtube-dl</code> 和 <code>ffmpeg</code>.</p>
+<p>匹配 YouTube 中的字幕也是花了不少时间.🤣</p>
+<blockquote>
+<p>单词视频, 是一个需要积累的过程, 不可能一下子就能覆盖所有的英文单词. 为此在桌面端工具中, 有一个<code>单词视频</code>工具, 这个工具主要是对单词视频进行管理.</p>
+</blockquote>
 
             </div>
           </article>
